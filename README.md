@@ -1,1 +1,1 @@
-# AJAX Demo
+# ajax-demo
