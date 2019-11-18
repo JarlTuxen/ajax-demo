@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX-demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<h1>Random Spring Quote</h1>
+<p id="quote">Spring - boing, boing!</p>
+<button id="myBtn">Tryk</button>
+
+<script>
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.ajax({
+                type: "GET",
+                dataType: "jsonp",
+                url: "https:xkcd.com/327/info.0.json",
+                success: function(responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        alert("External content loaded successfully!");
+                    if (statusTxt == "error")
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                }
+            });
+        });
+    });
+    /*
+            $.ajax({
+                url: "http://api.github.com/users/jarltuxen"
+            }).then(function (data) {
+                $('#quote').text(data.id + " " + data.name + " " + data.company);
+            });
+      */
+    /*$("button").click(function(){
+            $("#quote").load("../static/javascriptassignment.js", function(responseTxt, statusTxt, xhr){
+                if(statusTxt == "success")
+                    alert("External content loaded successfully!");
+                if(statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+            });
+        });*/
+    /*$("button").click(funtion(){
+        alert("Hej");
+        $("#quote").load("https://gturnquist-quoters.cfapps.io/api/random",
+            funtion(responseTxt, statusTxt, xhr){
+                if(statusTxt == "success")
+                    alert("External content loaded successfully!");
+                if(statusTxt == "error")
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+
+        });
+    };);*/
+</script>
+</body>
+</html>
