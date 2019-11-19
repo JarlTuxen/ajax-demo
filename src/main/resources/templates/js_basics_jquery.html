@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulating DOM Javascript Exercise</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Javascript Excercise</h1>
+    <input id="iInput"> </input>
+    <p id="pOutput"> </p>
+    <button id="btnChange">Click me</button>
+
+<script>
+    $(document).ready(function(){
+        $("#btnChange").click(function(){
+            changeText();
+        });
+    });
+
+    function changeText()
+    {
+        if ($("#btnChange").text() == "Change text above and click me!")
+        {
+            $("#btnChange").text("Click me again!");
+            $("#pOutput").html("Thank you for changing text to: <b>"
+                + $("#iInput").val()
+                + "</b>");
+        }
+        else
+        {
+            $("#btnChange").text("Change text above and click me!");
+            $("#pOutput").html("");
+            $("#iInput").val("Change me");
+        }
+    }
+
+</script>
+</body>
+</html>

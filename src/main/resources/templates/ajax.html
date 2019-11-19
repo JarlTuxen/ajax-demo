@@ -17,10 +17,12 @@
             $.ajax({
                 type: "GET",
                 dataType: "jsonp",
-                url: "https:xkcd.com/327/info.0.json",
+                url: "http://xkcd.com/327/info.0.json",
                 success: function(responseTxt, statusTxt, xhr) {
-                    if (statusTxt == "success")
+                    if (statusTxt == "success") {
                         alert("External content loaded successfully!");
+                        $("#quote").text(responseTxt.title);
+                    }
                     if (statusTxt == "error")
                         alert("Error: " + xhr.status + ": " + xhr.statusText);
                 }

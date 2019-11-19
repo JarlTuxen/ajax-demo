@@ -8,10 +8,17 @@
 <body>
 <p>Click me!</p>
 <p>Click me too!</p>
+<input type="text" placeholder="Text goes here">
 
 <script>
     $("p").click(function(){
         $(this).hide();
+    });
+    $("input").focus(function(){
+        $(this).css("background-color", "#ffff00");
+    });
+    $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
     });
 </script>
 </body>

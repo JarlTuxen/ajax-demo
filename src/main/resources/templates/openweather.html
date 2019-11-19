@@ -23,10 +23,10 @@
 
                         //alert(responseTxt.name + ":" + responseTxt.weather[0].description);
                         $("div").text(responseTxt.name
-                            + " " + responseTxt.weather.description
-                            + " " + responseTxt.main.temp
-                            + " " + responseTxt.wind.speed
-                            + " " + responseTxt.wind.deg);
+                            + "<br>" + "" + responseTxt.weather.description
+                            + "<br>" + responseTxt.main.temp
+                            + "<br>" + responseTxt.wind.speed
+                            + "<br>" + responseTxt.wind.deg);
 
                     }
                     if (statusTxt == "error")
