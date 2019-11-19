@@ -22,11 +22,11 @@
                         //alert("External content loaded successfully!");
 
                         //alert(responseTxt.name + ":" + responseTxt.weather[0].description);
-                        $("div").text(responseTxt.name
-                            + "<br>" + "" + responseTxt.weather.description
-                            + "<br>" + responseTxt.main.temp
-                            + "<br>" + responseTxt.wind.speed
-                            + "<br>" + responseTxt.wind.deg);
+                        $("div").html("By: " + responseTxt.name
+                            + "<br> Vejr: " + "" + responseTxt.weather[0].description
+                            + "<br> Temp: " + responseTxt.main.temp
+                            + "<br> Vind: " + responseTxt.wind.speed
+                            + "<br> Retning: " + responseTxt.wind.deg);
 
                     }
                     if (statusTxt == "error")
