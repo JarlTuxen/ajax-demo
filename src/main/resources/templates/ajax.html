@@ -6,13 +6,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<h1>Random Spring Quote</h1>
-<p id="quote">Spring - boing, boing!</p>
+<h1>Github user info</h1>
+<p id="quote">Info goes here!</p>
 <button id="myBtn">Tryk</button>
 
 <script>
 
-    $(document).ready(function(){
+    $("button").click(function() {
+        $.ajax({
+            url: "http://api.github.com/users/jarltuxen"
+        }).then(function (data) {
+            $('#quote').text(data.id + " " + data.name + " " + data.company);
+        });
+    });
+
+    /*$(document).ready(function(){
         $("button").click(function(){
             $.ajax({
                 type: "GET",
@@ -28,14 +36,8 @@
                 }
             });
         });
-    });
-    /*
-            $.ajax({
-                url: "http://api.github.com/users/jarltuxen"
-            }).then(function (data) {
-                $('#quote').text(data.id + " " + data.name + " " + data.company);
-            });
-      */
+    });*/
+
     /*$("button").click(function(){
             $("#quote").load("../static/javascriptassignment.js", function(responseTxt, statusTxt, xhr){
                 if(statusTxt == "success")
@@ -44,7 +46,8 @@
                     alert("Error: " + xhr.status + ": " + xhr.statusText);
             });
         });*/
-    /*$("button").click(funtion(){
+    /*
+    $("button").click(funtion(){
         alert("Hej");
         $("#quote").load("https://gturnquist-quoters.cfapps.io/api/random",
             funtion(responseTxt, statusTxt, xhr){

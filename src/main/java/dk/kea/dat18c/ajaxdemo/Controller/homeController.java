@@ -14,5 +14,8 @@ public class homeController
 
     @GetMapping("/js_basics")
     public String jsBasics() { return "js_basics"; }
+
+    @GetMapping("/htmltagds")
+    public String htmlTagDs() { return "htmltagds"; }
 }
 
