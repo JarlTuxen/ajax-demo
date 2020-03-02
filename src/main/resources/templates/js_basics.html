@@ -8,14 +8,14 @@
         {
             if (document.getElementById("btnChange").innerText == "Change text above and click me!")
             {
-                document.getElementById("btnChange").innerHTML = "Click me again!";
+                document.getElementById("btnChange").innerText = "Click me again!";
                 document.getElementById("pOutput").innerHTML = "Thank you for changing text to: <b>"
                     + document.getElementById("iInput").value
                     + "</b>";
             }
             else
             {
-                document.getElementById("btnChange").innerHTML = "Change text above and click me!";
+                document.getElementById("btnChange").innerText = "Change text above and click me!";
                 document.getElementById("pOutput").innerHTML = "";
                 document.getElementById("iInput").value = "Change me";
             }
